@@ -387,7 +387,7 @@ const contatos: Contact[] = [
     telefone: '(51) 95678-9012',
     email: 'giovannisilva@example.com',
     editando: false,
-    marcado: false,
+    marcado: true,
     cor: colors.maroon
   },
   {
@@ -423,7 +423,7 @@ const contatos: Contact[] = [
     telefone: '(51) 90123-4567',
     email: 'marianapereira@example.com',
     editando: false,
-    marcado: false,
+    marcado: true,
     cor: colors.orange
   }
 ]

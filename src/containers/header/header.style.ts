@@ -3,6 +3,18 @@ import styled from 'styled-components'
 export const HeaderContainer = styled.div`
   width: 100%;
   display: flex;
+
+  @media screen and (max-width: 1023px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+  }
+
+  @media screen and (max-width: 767px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2px;
+  }
 `
 
 export const TitleContainer = styled.div`
@@ -18,6 +30,10 @@ export const TitleContainer = styled.div`
     color: #5f6368;
     opacity: 0.9;
     margin-left: 8px;
+  }
+
+  @media screen and (max-width: 1023px) {
+    width: 150px;
   }
 `
 
@@ -41,6 +57,11 @@ export const FilterDiv = styled.div`
     outline: none;
     width: 80%;
   }
+
+  @media screen and (max-width: 1023px) {
+    width: 300px;
+    margin-right: 80px;
+  }
 `
 
 export const CreateContainer = styled.div`
@@ -58,6 +79,7 @@ export const CreateContainer = styled.div`
   padding-left: 20px;
   margin: 16px;
   cursor: pointer;
+  width: fit-content;
 
   img {
     width: 32px;

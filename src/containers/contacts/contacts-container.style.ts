@@ -37,12 +37,28 @@ export const PhoneNumberTitleContaiuner = styled(TitleContainer)`
 `
 
 export const EmailTitleContainer = styled(TitleContainer)`
-  width: 215px;
+  width: 250px;
+
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
 `
 
 export const ContactListContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 85vh;
+  max-height: 80vh;
   overflow-y: scroll;
+`
+
+export const ContactLength = styled.div`
+  letter-spacing: 0.07272727em;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1rem;
+  text-transform: uppercase;
+  color: #5f6368;
+  display: flex;
+  padding: 10px 0 10px 6px;
 `
