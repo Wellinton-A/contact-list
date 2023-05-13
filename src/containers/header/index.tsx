@@ -9,10 +9,17 @@ import {
   TitleContainer
 } from './header.style'
 import { toggleCreating } from '../../store/creating-contanct/creating.reducer'
+import { setFilter } from '../../store/contacts/contact.reducer'
+import { selectFilter } from '../../store/contacts/contact.selector'
 
 const Header = () => {
   const creating = useSelector(selectCreating)
+  const filter = useSelector(selectFilter)
   const dispatch = useDispatch()
+
+  const handleFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setFilter(event.target.value.toLocaleLowerCase()))
+  }
 
   const handleCreateContact = () => {
     dispatch(toggleCreating(!creating))
@@ -32,7 +39,12 @@ const Header = () => {
           src={process.env.PUBLIC_URL + '/images/icons8-search-gray.svg'}
           alt="search icon"
         />
-        <input type="text" placeholder="Pesquisa" />
+        <input
+          onChange={handleFilter}
+          type="text"
+          placeholder="Pesquisa"
+          value={filter}
+        />
       </FilterDiv>
       <CreateContainer onClick={handleCreateContact}>
         <img

@@ -4,21 +4,43 @@ import ContactItem from '../../components/contact-item'
 import * as S from './contacts-container.style'
 import {
   selectContactList,
-  selectFavContactList
+  selectFavContactList,
+  selectFilter,
+  selectFilteredList,
+  selectbackUpContactList
 } from '../../store/contacts/contact.selector'
 import { useEffect } from 'react'
-import { favContactList } from '../../store/contacts/contact.reducer'
+import {
+  favContactList,
+  setContactList,
+  setFIlteredList
+} from '../../store/contacts/contact.reducer'
 import ContactItemFav from '../../components/contact-favorite'
 
 const Contacts = () => {
   const contactList = useSelector(selectContactList)
   const favsContactList = useSelector(selectFavContactList)
+  const filteredList = useSelector(selectFilteredList)
+  const backUpContactList = useSelector(selectbackUpContactList)
+  const filter = useSelector(selectFilter)
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(favContactList())
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [contactList])
+
+  useEffect(() => {
+    dispatch(setFIlteredList(filter))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filter])
+
+  useEffect(() => {
+    filter !== ''
+      ? dispatch(setContactList(filteredList))
+      : dispatch(setContactList(backUpContactList))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filteredList])
 
   return (
     <S.ContactsContainer>
