@@ -72,7 +72,6 @@ const AddContact = () => {
     dispatch(sortContactList())
   }
 
-  console.log(contactList)
   const handleCreatingContact = () => {
     dispatch(toggleCreating(!creatingContact))
   }
