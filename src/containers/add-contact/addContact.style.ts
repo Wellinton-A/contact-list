@@ -18,7 +18,7 @@ export const AddContactContainer = styled.div<Props>`
 `
 
 export const ContactContainer = styled.div`
-  display: flew;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;

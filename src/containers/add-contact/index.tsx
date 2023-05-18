@@ -77,7 +77,10 @@ const AddContact = () => {
   }
 
   return (
-    <AddContactContainer creating={creatingContact.toString()}>
+    <AddContactContainer
+      creating={creatingContact.toString()}
+      data-testid="addContact"
+    >
       <ContactContainer>
         <FormContainer onSubmit={handleSubmit}>
           <span>Criar contato</span>
@@ -87,6 +90,7 @@ const AddContact = () => {
               alt="search icon"
             />
             <FormInput
+              data-testid="name-input"
               onChange={handleName}
               required
               type="text"
@@ -100,6 +104,7 @@ const AddContact = () => {
               alt="search icon"
             />
             <FormInput
+              data-testid="phone-input"
               onChange={handlePhone}
               required
               type="tel"
@@ -113,6 +118,7 @@ const AddContact = () => {
               alt="search icon"
             />
             <FormInput
+              data-testid="email-input"
               onChange={handleEmail}
               type="email"
               required
@@ -122,7 +128,11 @@ const AddContact = () => {
           </InputContainer>
           <ButtonContainer>
             <button type="submit">Salvar</button>
-            <button type="button" onClick={handleCreatingContact}>
+            <button
+              data-testid="addCancelButton"
+              type="button"
+              onClick={handleCreatingContact}
+            >
               Cancelar
             </button>
           </ButtonContainer>

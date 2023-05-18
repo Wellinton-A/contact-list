@@ -1,3 +1,3 @@
-import { rootReducer } from '../store'
+import { rootState } from '../store'
 
-export const selectCreating = (state: rootReducer) => state.creating.creating
+export const selectCreating = (state: rootState) => state.creating.creating

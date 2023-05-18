@@ -60,7 +60,7 @@ const Contacts = () => {
             ))}
           </>
         )}
-        <S.ContactLength>{`Contatos(${contactList.length})`}</S.ContactLength>
+        <S.ContactLength data-testid="total-contacts">{`Contatos(${contactList.length})`}</S.ContactLength>
         {contactList.map((item) => (
           <ContactItem key={item.id} contact={item} />
         ))}

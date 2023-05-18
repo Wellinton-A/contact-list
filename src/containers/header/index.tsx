@@ -46,7 +46,7 @@ const Header = () => {
           value={filter}
         />
       </FilterDiv>
-      <CreateContainer onClick={handleCreateContact}>
+      <CreateContainer data-testid="addButton" onClick={handleCreateContact}>
         <img
           src={process.env.PUBLIC_URL + '/images/icons8-add-50.png'}
           alt="Add Icon"
